@@ -80,6 +80,20 @@ namespace Calculator
             Console.ReadKey();
             Menu();
         }
+        static void Potenciacao()
+        {
+            Console.Clear();
+            Console.WriteLine("Número base:");
+            float valorBase = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Potência:");
+            float potencia = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("O resultado da potenciação é: " + (Math.Pow(valorBase, potencia)));
+            Console.ReadKey();
+            Menu();
+
+        }
         static void Menu()
         {
             Console.Clear();
@@ -88,7 +102,8 @@ namespace Calculator
             Console.WriteLine("2 - Subtração");
             Console.WriteLine("3 - Divisão");
             Console.WriteLine("4 - Multiplicação");
-            Console.WriteLine("5 - Sair!");
+            Console.WriteLine("5 - Potenciação");
+            Console.WriteLine("0 - Sair!");
 
             Console.WriteLine("----------");
             Console.Write("Selecione uma opção: ");
@@ -96,11 +111,13 @@ namespace Calculator
 
             switch (metodoEscolhido)
             {
+                case 0: System.Environment.Exit(0); break;
                 case 1: Soma(); break;
                 case 2: Subtracao(); break;
                 case 3: Divisao(); break;
                 case 4: Multiplicacao(); break;
-                case 5: System.Environment.Exit(0); break;
+                case 5: Potenciacao(); break;
+
 
                 default: Menu(); break;
             }
